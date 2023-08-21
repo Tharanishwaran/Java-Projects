@@ -21,7 +21,7 @@ public class ATMInterface {
     private void createGUI() {
         frame = new JFrame("ATM Interface");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setPreferredSize(new Dimension(700, 400)); // Set initial window size
+        frame.setPreferredSize(new Dimension(700, 400)); 
 
         loginButton = new JButton("Login");
         withdrawButton = new JButton("Withdraw");
@@ -126,11 +126,11 @@ public class ATMInterface {
             }
         });
 
-        // Create button panels
+    
         JPanel leftButtonPanel = new JPanel();
         leftButtonPanel.setLayout(new BoxLayout(leftButtonPanel, BoxLayout.Y_AXIS));
         leftButtonPanel.add(withdrawButton);
-        leftButtonPanel.add(Box.createRigidArea(new Dimension(10, 150))); // Vertical spacing
+        leftButtonPanel.add(Box.createRigidArea(new Dimension(10, 150))); 
         leftButtonPanel.add(depositButton);
 
         JPanel centerButtonPanel = new JPanel();
@@ -140,34 +140,32 @@ public class ATMInterface {
         JPanel rightButtonPanel = new JPanel();
         rightButtonPanel.setLayout(new BoxLayout(rightButtonPanel, BoxLayout.Y_AXIS));
         rightButtonPanel.add(checkBalanceButton);
-        rightButtonPanel.add(Box.createRigidArea(new Dimension(10, 150))); // Vertical spacing
+        rightButtonPanel.add(Box.createRigidArea(new Dimension(10, 150))); 
         rightButtonPanel.add(changePINButton);
 
-        // Create main button panel
-        JPanel buttonPanel = new JPanel(new GridLayout(1, 3, 10, 10)); // 1 row, 3 columns
-        buttonPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20)); // Padding
+        
+        JPanel buttonPanel = new JPanel(new GridLayout(1, 3, 10, 10)); 
+        buttonPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20)); 
         buttonPanel.add(leftButtonPanel);
         buttonPanel.add(centerButtonPanel);
         buttonPanel.add(rightButtonPanel);
 
-        // Create top panel
+    
 
         JPanel topPanel = new JPanel();
         topPanel.add(new JLabel("Welcome to ATM"));
-        // topPanel.setFont(buttonFont);
+        
         topPanel.setForeground(buttonTextColor);
          
     
-        // Create content panel
+        
         JPanel contentPanel = new JPanel(new BorderLayout());
         contentPanel.add(topPanel, BorderLayout.NORTH);
         contentPanel.add(buttonPanel, BorderLayout.CENTER);
         contentPanel.add(balanceLabel, BorderLayout.SOUTH);
         frame.setContentPane(contentPanel);
 
-        // Pack the frame to accommodate its contents
         frame.pack();
-        // Center the frame on the screen
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
